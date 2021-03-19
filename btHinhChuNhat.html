@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <canvas id="myCanvas"></canvas>
+        <script>
+            function Rectangle(L, W) {
+                this.length = L;
+                this.width = W;
+                this.acreage = function () {
+                    return alert(
+                        `Acreage of rectangle ${this.length * this.width}`
+                    );
+                };
+                this.perimeter = function () {
+                    return alert(
+                        `Perimeter of rectangle ${
+                            (this.length + this.width) * 2
+                        }`
+                    );
+                };
+
+                this.cancas = function () {
+                    let I = document.getElementById("myCanvas");
+                    ctx = tangle.getContext("2d");
+                };
+            }
+            let tangle = new Rectangle(300, 120);
+            tangle.acreage();
+            tangle.perimeter();
+        </script>
+    </body>
+</html>

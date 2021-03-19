@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function Temperature(C) {
+                this.Celsius = C;
+                this.convertCtoF = function () {
+                    return alert(
+                        `Convert ${this.Celsius} Celsius To Fahrenheit: ${
+                            (9 / 5) * this.Celsius + 32
+                        }`
+                    );
+                };
+                this.convertCtoK = function () {
+                    return alert(
+                        `Convert ${this.Celsius} Celsius To Kelvin: ${
+                            this.Celsius + 273.15
+                        }`
+                    );
+                };
+            }
+            let temp = new Temperature(25);
+            temp.convertCtoF();
+            temp.convertCtoK();
+        </script>
+    </body>
+</html>
