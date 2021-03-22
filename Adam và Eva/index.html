@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam và Eva</title>
+</head>
+<body>
+    <script>
+      
+
+        class Apple{
+            constructor(){
+                 this.weight =  10;
+            }
+            getWeight(){
+                return this.weight;
+            }
+        }
+
+        class Human{
+            constructor(name,gender,weight){
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+            voice(voice){
+                console.log(voice);
+            }
+
+            checkWeight(apple){
+                if(apple > 0){
+                    return apple;
+                }else return false;
+            } 
+
+            eat(apple){
+                if(this.checkWeight(apple.weight)){
+                    this.weight +=1;
+                    apple.weight -= 1;
+                };
+            }
+
+            
+
+        }
+
+        let apple = new Apple();
+        let adam = new Human('adam','male',50);
+        let eva = new Human('eva','female',40);
+        document.write(`weight apple: ${apple.weight }<br>`);
+        adam.eat(apple);
+        document.write(`weight adam before eat apple: ${adam.weight }<br>`);
+        document.write(`weight apple: ${apple.weight }<br>`);
+        
+        adam.eat(apple);
+        document.write(`weight adam before eat apple: ${adam.weight }<br>`);
+        document.write(`weight apple: ${apple.weight }<br>`);
+        
+        eva.eat(apple);
+        document.write(`weight eva before eat apple: ${eva.weight }<br>`);
+        document.write(`weight apple: ${apple.weight }<br>`);
+        
+        
+    </script>
+</body>
+</html>
