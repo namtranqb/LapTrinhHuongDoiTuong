@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str1 = 'LAP    TriNh  viEn';
+        let str2 = 'laP trinh     VieN';
+        function check(str){
+            let newString= str.replace('  *','');
+            let sepetateWord = newString.toLowerCase().split("");
+            for(let i=0; i<sepetateWord.length;i++){
+                sepetateWord[i]=sepetateWord[i].charAt(0).toUpperCase()+ sepetateWord[i].substring(1);
+            }
+            return sepetateWord.join("");
+        }
+        console.log(capitalize(str1));
+        console.log(capitalize(str2));
+    </script>
+</body>
+</html>

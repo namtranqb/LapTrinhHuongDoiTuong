@@ -3,12 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Document</title>
+    <style>
+ 
+    </style>
 </head>
 <body>
+    <button class="btn btn-primary" onclick="switchButton(true)">ON</button>
+    <button class="btn btn-warning"  onclick="switchButton(false)">OFF</button>
+    <img id="image" alt="">
     <script>
+        class Switch{
+           constructor(){
+               this.status = false;
+           }
+
+           switchButton(){
+               if(this.status == false){
+                this.status = true;
+               }else {
+                this.status = false;
+               }    
+           }
+
+           switchOff(){
+               this.status = false;
+           }
+
+           switchOn(){
+               this.status = true;
+           }
+        }
+
+        class Lamp{
+            constructors(status){
+                this.status = status;
+            }
+
+            turnOff(){
+                if(typeof(this.status) == 'boolean'){
+                    this.status = false;
+                } else{
+                    return 'type is not boolean';
+                }
+            }
+
+            turnOn(){
+                if(typeof(this.status) == 'boolean'){
+                    this.status = true;
+                } else{
+                    return 'type is not boolean';
+                }
+            }
+        }
+
+        
+            let switch1 = new Switch;
+
+
+            function switchButton(status){
+                if(status){
+                    switch1.switchOn();
+                    console.log(switch1.status);
+                }else {
+                    switch1.switchOff();
+                    console.log(switch1.status);
+                }
+            }
+            // console.log(switch1.status);
+            let lamp1 = new Lamp(true);
+            // console.log(lamp1.status);
+            if(lamp1.status){
+                
+                document.getElementById('image').src = 'images/off.jpg';
+            }else{
+                document.getElementById('image').src = 'images/on.jpg';
+            }
+   
+
+        
+       
+        
+     
+
         
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 </body>
 </html>
